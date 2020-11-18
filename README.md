@@ -8,3 +8,12 @@ Changes :
   3. Created Table of Item Mode in Database using DbSet.
   4. Created Shopping Controller with -
       a. AddItemInView, AddItemToDb actions and Views created.
+
+Next Commit:
+  Added following Actions in Shopping Controller:
+  1. ViewAllItems
+  2. AddItemInView
+  3. AddItemToDb
+  4. EditItemInView
+  5. EditItemInDb
+  6. DeleteItemFromDb
