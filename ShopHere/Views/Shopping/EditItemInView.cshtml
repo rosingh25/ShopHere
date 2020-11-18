@@ -1,0 +1,37 @@
+﻿@model ShopHere.Models.Item
+@{
+    ViewBag.Title = "EditItemInView";
+}
+
+<h2>EditItemInView</h2>
+
+
+<h2>Adding Item Here</h2>
+
+@using (Html.BeginForm("EditItemInDb", "Shopping"))
+{
+    <div>
+        @Html.LabelFor(m => m.ItemName);
+        @Html.TextBoxFor(m => m.ItemName);
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.ItemDescription);
+        @Html.TextBoxFor(m => m.ItemDescription);
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Price);
+        @Html.TextBoxFor(m => m.Price);
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Quantity);
+        @Html.TextBoxFor(m => m.Quantity);
+    </div>
+    @Html.HiddenFor(m => m.Id);
+
+    <button type="submit" name="Submit">Create Item</button>
+
+}
+

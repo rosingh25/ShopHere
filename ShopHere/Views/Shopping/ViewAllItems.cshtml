@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ShopHere.Models.Item>
+@{
+    ViewBag.Title = "ViewAllItems";
+}
+
+<h2>View All Items Here</h2>
+
+@foreach(var item in Model)
+{
+    <div style="border:ridge 2px black">
+        <h3>Item Name: @item.ItemName</h3>
+        <h3>Item Description: @item.ItemDescription</h3>
+        <h3>Item Price: @item.Price</h3>
+        @if (item.Quantity > 0)
+        {
+            <h3>Available Quantity : @item.Quantity</h3>
+        }
+        else
+        {
+            <h3>Item Not Available Currently</h3>
+        }
+    <button>@Html.ActionLink("Edit Item", "EditItemInView", "Shopping", new { id = item.Id }, null) </button>
+        <button>@Html.ActionLink("Delete Item", "DeleteItemFromDb","Shopping",new {id = item.Id },null)</button>
+    </div>
+    
+}

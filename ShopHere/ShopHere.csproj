@@ -186,6 +186,10 @@
     <Compile Include="Migrations\202011181546030_AddedItemDescriptionInItemModel.Designer.cs">
       <DependentUpon>202011181546030_AddedItemDescriptionInItemModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011181856302_AddedAnnotationsInItemModel.cs" />
+    <Compile Include="Migrations\202011181856302_AddedAnnotationsInItemModel.Designer.cs">
+      <DependentUpon>202011181856302_AddedAnnotationsInItemModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -254,6 +258,11 @@
     <Content Include="Views\Shopping\ShoppingPage.cshtml" />
     <Content Include="Views\Shopping\AddItemInView.cshtml" />
     <Content Include="Views\Shopping\AddItemToDb.cshtml" />
+    <Content Include="Views\Shopping\DeleteItemFromDb.cshtml" />
+    <Content Include="Views\Shopping\InvalidIdView.cshtml" />
+    <Content Include="Views\Shopping\ViewAllItems.cshtml" />
+    <Content Include="Views\Shopping\EditItemInView.cshtml" />
+    <Content Include="Views\Shopping\EditItemInDb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011181546030_AddedItemDescriptionInItemModel.resx">
       <DependentUpon>202011181546030_AddedItemDescriptionInItemModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011181856302_AddedAnnotationsInItemModel.resx">
+      <DependentUpon>202011181856302_AddedAnnotationsInItemModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
