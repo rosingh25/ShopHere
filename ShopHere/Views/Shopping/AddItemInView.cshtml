@@ -10,21 +10,25 @@
     <div>
         @Html.LabelFor(m => m.ItemName);
         @Html.TextBoxFor(m => m.ItemName);
+        @Html.ValidationMessageFor(m=> m.ItemName)
     </div>
     
     <div>
         @Html.LabelFor(m => m.ItemDescription);
         @Html.TextBoxFor(m => m.ItemDescription);
+        @Html.ValidationMessageFor(m => m.ItemDescription)
     </div>    
 
-    <div>    
+    <div>
         @Html.LabelFor(m => m.Price);
         @Html.TextBoxFor(m => m.Price);
+        @Html.ValidationMessageFor(m => m.Price)
     </div>
 
-    <div>    
+    <div>
         @Html.LabelFor(m => m.Quantity);
         @Html.TextBoxFor(m => m.Quantity);
+        @Html.ValidationMessageFor(m => m.Quantity)
     </div>
     
     <button type="submit" name="Submit">Create Item</button>

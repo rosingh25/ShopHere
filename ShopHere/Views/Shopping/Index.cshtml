@@ -1,7 +1,46 @@
-﻿
+﻿@model IEnumerable<ShopHere.Models.Item>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Welcome To Shopping Page</h2>
 
+<h2>HomePage</h2>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+</table>
+    @foreach (var item in Model)
+    {
+<div style="border:ridge 2px black">
+    <h3>Item Name: @item.ItemName</h3>
+    <h3>Item Description: @item.ItemDescription</h3>
+    <h3>Item Price: @item.Price</h3>
+    @if (item.Quantity > 0)
+    {
+        <h3>Available Quantity : @item.Quantity</h3>
+    }
+    else
+    {
+        <h3>Item Not Available Currently</h3>
+    }
+    @using (Html.BeginForm("BuyItem", "Shopping"))
+    {
+        
+        <input type="hidden" name="Id" value="@item.Id" />
+        
+        @Html.Label("Enter Quantity")
+        <input type="number" name="Quantity" />
+
+        <button class="btn btn-success" type="submit">Buy Item</button>
+    }
+
+
+</div>
+
+    }

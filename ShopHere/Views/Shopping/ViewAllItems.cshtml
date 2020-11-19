@@ -19,8 +19,9 @@
         {
             <h3>Item Not Available Currently</h3>
         }
-    <button>@Html.ActionLink("Edit Item", "EditItemInView", "Shopping", new { id = item.Id }, null) </button>
-        <button>@Html.ActionLink("Delete Item", "DeleteItemFromDb","Shopping",new {id = item.Id },null)</button>
+    <button  class="btn btn-success" >@Html.ActionLink("Edit Item", "EditItemInView", "Shopping", new { id = item.Id }, null) </button>
+        <button class=" btn btn-danger">@Html.ActionLink("Delete Item", "DeleteItemFromDb","Shopping",new {id = item.Id },null)</button>
     </div>
+    <br />
     
 }

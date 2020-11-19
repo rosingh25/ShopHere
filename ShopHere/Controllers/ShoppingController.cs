@@ -18,23 +18,56 @@ namespace ShopHere.Controllers
         // GET: Shopping
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<Item> AllItems = _context.Items.ToList();
+            return View(AllItems);
         }
         public ActionResult ShoppingPage()
         {
             return View();
         }
+
+        /*
+         *  -------Customer Actions--------
+         *
+         */
+
+        public ActionResult BuyItem(int Id, int Quantity)
+        {
+            Item BuyItem = _context.Items.SingleOrDefault(m => m.Id == Id);
+            if(BuyItem == null)
+            {
+                return View("InvalidIdView");
+            }
+            if(BuyItem.Quantity < Quantity)
+            {
+                return Content("NotAvailable");
+            }
+            BuyItem.Quantity -= Quantity;
+            _context.SaveChanges();
+            return View(BuyItem);
+        }
+
+
+        /*
+         *  -------Admin Actions--------
+         *
+         */
+
+        //Adding Item In View
         public ActionResult AddItemInView()
         {
             Item item = new Item();
             return View(item);
         }
 
+        //To View All Items
         public ActionResult ViewAllItems()
         {
             IEnumerable<Item> AllItems =_context.Items.ToList();
             return View(AllItems);
         }
+
+        //To Add New Item
         public ActionResult AddItemToDb(Item item)
         {
             if (!ModelState.IsValid)
@@ -45,6 +78,8 @@ namespace ShopHere.Controllers
             _context.SaveChanges();
             return View(item);
         }
+
+        //To Edit Item (Using Edit Button)
         public ActionResult EditItemInView(int id)
         {
             Item editing = _context.Items.SingleOrDefault(m => m.Id == id);
@@ -55,6 +90,7 @@ namespace ShopHere.Controllers
             return View(editing);
         }
         
+        //Edit In Database
         public ActionResult EditItemInDb(Item item)
         {
             if (!ModelState.IsValid)
@@ -68,6 +104,7 @@ namespace ShopHere.Controllers
 
         }
 
+        //Delete Item In Db (Delete Button)
         public ActionResult DeleteItemFromDb(int id)
         {
             Item removing = _context.Items.SingleOrDefault(m => m.Id == id);
