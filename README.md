@@ -23,11 +23,12 @@ Changes :
   4. Created Shopping Controller with -
       a. AddItemInView, AddItemToDb actions and Views created.
 \+
-  Added following Actions and their corrosponding views in Shopping Controller:
-    1. ViewAllItems
-    2. AddItemInView
-    3. AddItemToDb
-    4. EditItemInView
-    5. EditItemInDb
-    6. DeleteItemFromDb
-    7. Added Annotations in Item model
+  
+  1. ViewAllItems
+  2. AddItemInView
+  3. AddItemToDb
+  4. EditItemInView
+  5. EditItemInDb
+  6. DeleteItemFromDb
+  7. Added Annotations in Item model
+    (Added above Actions and their corrosponding views in Shopping Controller:)
