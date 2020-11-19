@@ -1,11 +1,19 @@
 # ShopHere
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
 
+Upcoming Changes :
+  Authentication & Authorization by defining roles.
+  
 Changes : 
 19-11-2020
   1. Index Shopping Page
   2. Buy Item Action 
   3. Updated Bootstrap Version
++ 
+  1. Added Homepage View
+  2. Implemented Searching : SearchItemByCustomer Action in Shopping Controller.
+  3. Applied BootStrap In HomePage & Layout for Front End Development.
+
 
 
 18-11-2020 
