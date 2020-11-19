@@ -31,6 +31,14 @@ namespace ShopHere.Controllers
          *
          */
 
+        public ActionResult SearchItemByCustomer(string search)
+        {
+            IEnumerable<Item> SearchedItems = (from item in _context.Items
+                                              where item.ItemName.Contains(search)
+                                              select item).ToList();
+            return View("Index", SearchedItems);
+        }
+
         public ActionResult BuyItem(int Id, int Quantity)
         {
             Item BuyItem = _context.Items.SingleOrDefault(m => m.Id == Id);
