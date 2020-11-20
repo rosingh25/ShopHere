@@ -1,37 +1,37 @@
 ﻿@model ShopHere.Models.Item
 @{
-    ViewBag.Title = "AddItemInView";
+    ViewBag.Title = "EditItemInView";
 }
+
+<h2>EditItemInView</h2>
+
 
 <h2>Adding Item Here</h2>
 
-@using (Html.BeginForm("AddItemToDb","Shopping"))
+@using (Html.BeginForm("EditItemInDb", "Admin"))
 {
     <div>
         @Html.LabelFor(m => m.ItemName);
         @Html.TextBoxFor(m => m.ItemName);
-        @Html.ValidationMessageFor(m=> m.ItemName)
     </div>
-    
+
     <div>
         @Html.LabelFor(m => m.ItemDescription);
         @Html.TextBoxFor(m => m.ItemDescription);
-        @Html.ValidationMessageFor(m => m.ItemDescription)
-    </div>    
+    </div>
 
     <div>
         @Html.LabelFor(m => m.Price);
         @Html.TextBoxFor(m => m.Price);
-        @Html.ValidationMessageFor(m => m.Price)
     </div>
 
     <div>
         @Html.LabelFor(m => m.Quantity);
         @Html.TextBoxFor(m => m.Quantity);
-        @Html.ValidationMessageFor(m => m.Quantity)
     </div>
-    
+    @Html.HiddenFor(m => m.Id);
+
     <button type="submit" name="Submit">Create Item</button>
 
-    }
+}
 
