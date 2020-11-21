@@ -1,4 +1,4 @@
-﻿@model ShopHere.Models.Item
+﻿@model ShopHere.ViewModels.AddItemViewModel
 @{
     ViewBag.Title = "EditItemInView";
 }
@@ -11,25 +11,30 @@
 @using (Html.BeginForm("EditItemInDb", "Admin"))
 {
     <div>
-        @Html.LabelFor(m => m.ItemName);
-        @Html.TextBoxFor(m => m.ItemName);
+        @Html.LabelFor(m => m.Item.ItemName)
+        @Html.TextBoxFor(m => m.Item.ItemName)
     </div>
 
     <div>
-        @Html.LabelFor(m => m.ItemDescription);
-        @Html.TextBoxFor(m => m.ItemDescription);
+        @Html.LabelFor(m => m.Item.ItemDescription)
+        @Html.TextBoxFor(m => m.Item.ItemDescription)
     </div>
 
     <div>
-        @Html.LabelFor(m => m.Price);
-        @Html.TextBoxFor(m => m.Price);
+        @Html.LabelFor(m => m.Item.Price)
+        @Html.TextBoxFor(m => m.Item.Price)
     </div>
 
     <div>
-        @Html.LabelFor(m => m.Quantity);
-        @Html.TextBoxFor(m => m.Quantity);
+        @Html.LabelFor(m => m.Item.Quantity)
+        @Html.TextBoxFor(m => m.Item.Quantity)
     </div>
-    @Html.HiddenFor(m => m.Id);
+    <div>
+        @Html.LabelFor(m => m.Item.CategoryId)
+        @Html.DropDownListFor(m => m.Item.CategoryId, new SelectList(Model.Categories, "Id", "CategoryName"), "Select Category")
+        @Html.ValidationMessageFor(m => m.Item.CategoryId)
+    </div>
+    @Html.HiddenFor(m => m.Item.Id);
 
     <button type="submit" name="Submit">Create Item</button>
 

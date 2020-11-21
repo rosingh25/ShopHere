@@ -11,7 +11,7 @@
     <li class="nav-item mr-sm-2">
         @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link active" })
     </li>
-    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    <li class="btn"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
 </ul>
     }
 }

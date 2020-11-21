@@ -14,7 +14,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        @Html.ActionLink("ShopHere", "Index", "Shopping", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("ShopHere", "Index", "Shopping", new { area = ""}, new { @class = "navbar-brand" })
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -30,13 +30,13 @@
 
             <li class="nav-item active">
 
-                @Html.ActionLink("Contact", "Contact", "Home",new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                @Html.ActionLink("Add New Item", "AddItemInView", "Admin",new { }, htmlAttributes: new { id = "AddItem", @class = "nav-link " })
             </li>
 
             
 
         </ul>
-        <form action="/Shopping/SearchItemByCustomer" method="post" class="form-inline my-2 my-lg-0 ">
+        <form action="/Admin/SearchItemByCustomerAdmin" method="post" class="form-inline my-2 my-lg-0 ">
 
             <input class="form-control mr-sm-2" width="78" type="search" name="Search" placeholder="Search Item">
             <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>

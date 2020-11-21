@@ -9,51 +9,98 @@
 
 </head>
 <body>
-    
+
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         @Html.ActionLink("ShopHere", "Index", "Shopping", new { area = "" }, new { @class = "navbar-brand" })
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
 
-                @Html.ActionLink("Homes", "Index", "Home",new { }, htmlAttributes: new { id = "Home", @class = "nav-link " })
-            </li>
+                    @Html.ActionLink("Homes", "Index", "Home", new { }, htmlAttributes: new { id = "Home", @class = "nav-link " })
+                </li>
 
-            <li class="nav-item active">
+                <li class="nav-item active">
 
-                @Html.ActionLink("About", "About", "Home",new { }, htmlAttributes: new { id = "About", @class = "nav-link " })
-            </li>
+                    @Html.ActionLink("About", "About", "Home", new { }, htmlAttributes: new { id = "About", @class = "nav-link " })
+                </li>
 
-            <li class="nav-item active">
+                <li class="nav-item active">
 
-                @Html.ActionLink("Contact", "Contact", "Home",new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
-            </li>
-
-            
-
-        </ul>
-        <form action="/Shopping/SearchItemByCustomer" method="post" class="form-inline my-2 my-lg-0 ">
-
-            <input class="form-control mr-sm-2" width="78" type="search" name="Search" placeholder="Search Item">
-            <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
-
-        </form>
+                    @Html.ActionLink("Contact", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                </li>
 
 
 
+            </ul>
+            <form action="/Shopping/SearchItemByCustomer" method="post" class="form-inline my-2 my-lg-0 ">
 
-        @Html.Partial("_LoginPartial")
+                <input class="form-control mr-sm-2" width="78" type="search" name="Search" placeholder="Search Item">
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
 
-    </div>
+            </form>
+
+
+
+
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </nav>
+    
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-primary text-center">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2  mt-lg-0 ">
+                <li class="nav-item active mx-xl-5 btn-link ">
+
+                    @Html.ActionLink("Electronics", "Index", "Home", new { }, htmlAttributes: new { id = "Home", @class = "nav-link " })
+                </li>
+
+                <li class="nav-item active mx-5 btn-link">
+
+                    @Html.ActionLink("Clothes", "About", "Home", new { }, htmlAttributes: new { id = "About", @class = "nav-link " })
+                </li>
+
+                <li class="nav-item active mx-5 btn-link">
+
+                    @Html.ActionLink("Kids", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                </li>
+
+                <li class="nav-item active mx-5 btn-link">
+
+                    @Html.ActionLink("HomeAndFurniture", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                </li>
+                <li class="nav-item active mx-5 btn-link">
+
+                    @Html.ActionLink("Sports", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                </li>
+                <li class="nav-item active mx-5 btn-link">
+
+                    @Html.ActionLink("Books", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                </li>
+                <li class="nav-item active  mx-5 btn-link">
+
+                    @Html.ActionLink("Other", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                </li>
+
+            </ul>
+<div>
+    <button class="btn-dark"> Cart</button>
+</div>           
+
+        </div>
     </nav>
 
-   <br />
+    <br />
     <div class="container body-content">
-        
+
         @RenderBody()
         <hr />
         <footer>

@@ -13,10 +13,11 @@ namespace ShopHere.Models
        
         [Required(ErrorMessage ="Enter Name Please")]
         [Display(Name ="Item Name")]
+        [StringLength(60,ErrorMessage ="Name Length Limit 60 words")]
         public string ItemName { get; set; }
         
         [Required(ErrorMessage = "Item Description Required")]
-        [StringLength(30,ErrorMessage ="Maximum 30 Characters Allowd")]
+        [StringLength(60,ErrorMessage ="Maximum 30 Characters Allowd")]
         [Display(Name = "Item Description")]
 
         public string ItemDescription { get; set; }
@@ -24,11 +25,19 @@ namespace ShopHere.Models
         [Required(ErrorMessage = "Enter Price Please")]
         [Display(Name = "Item Price")]
 
-        public int Price { get; set; }
+        public float Price { get; set; }
 
         [Required(ErrorMessage = "Quantity Available Required")]
         [Display(Name = "Available Quantity")]
         public int Quantity { get; set; }
+
+        
+        public Category Category { get; set; }
+
+        [Required(ErrorMessage = "Please Select Category")]
+        public int? CategoryId { get; set; }
+
+
 
     }
 }
