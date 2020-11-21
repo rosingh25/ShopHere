@@ -2,9 +2,18 @@
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
 
 Upcoming Changes :
-  Authentication & Authorization for specific views in application.
+  Final Work on All Views.
+ 
+ 
   
 Changes : 
+21-11-2020
+  1. Added Categories to Items
+  2. Added Categories data through migrations
+  3. Worked on Layout, AddingItem View
+  4. Implemented pagination.
+  
+  
 20-11-2020
   1. Added Filter for Authorize
   2. Created AdminController
