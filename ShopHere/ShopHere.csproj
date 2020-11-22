@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ShoppingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,12 +218,25 @@
     <Compile Include="Migrations\202011211541141_FloatTypePrinceInItemModel.Designer.cs">
       <DependentUpon>202011211541141_FloatTypePrinceInItemModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011221634596_Ordermodel.cs" />
+    <Compile Include="Migrations\202011221634596_Ordermodel.Designer.cs">
+      <DependentUpon>202011221634596_Ordermodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011221639411_OrdermodelIsDelivered.cs" />
+    <Compile Include="Migrations\202011221639411_OrdermodelIsDelivered.Designer.cs">
+      <DependentUpon>202011221639411_OrdermodelIsDelivered.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011221642517_AddressInApplicationUser.cs" />
+    <Compile Include="Migrations\202011221642517_AddressInApplicationUser.Designer.cs">
+      <DependentUpon>202011221642517_AddressInApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AddItemViewModel.cs" />
@@ -399,6 +413,14 @@
     <Content Include="Views\Shopping\BuyItem.cshtml" />
     <Content Include="Views\Admin\InvalidIdView.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shopping\SearchItemByCustomer.cshtml" />
+    <Content Include="Views\Admin\SearchItemByCustomerAdmin.cshtml" />
+    <Content Include="Views\Order\OrderPlaced.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Shopping\CategoryFilter.cshtml" />
+    <Content Include="Views\Shared\ProductSearchEnded.cshtml" />
+    <Content Include="Views\Shopping\ItemNotAvailable.cshtml" />
+    <Content Include="Views\Order\ViewAllOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -438,6 +460,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011211541141_FloatTypePrinceInItemModel.resx">
       <DependentUpon>202011211541141_FloatTypePrinceInItemModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011221634596_Ordermodel.resx">
+      <DependentUpon>202011221634596_Ordermodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011221639411_OrdermodelIsDelivered.resx">
+      <DependentUpon>202011221639411_OrdermodelIsDelivered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011221642517_AddressInApplicationUser.resx">
+      <DependentUpon>202011221642517_AddressInApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

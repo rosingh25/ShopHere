@@ -1,15 +1,10 @@
 ﻿@model IEnumerable<ShopHere.Models.Item>
 @{
-    ViewBag.Title = "ShopHere";
+    ViewBag.Title = "SearchItemByCustomer";
 }
 
 
-<br />
-
-
-
-
-
+<h2>Search</h2>
 
 <div class="row row-cols-1 row-cols-md-4">
 
@@ -57,13 +52,13 @@
         </div>
 
     }
-    
+
 </div>
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center ">
-        
-        <li class="page-item"><a class="page-link" href="~/Shopping/Index/?pageNo=-1">Previous</a></li>
 
-        <li class="page-item"><a class="page-link" href="~/Shopping/Index/?pageNo=1">Next</a></li>
+        <li class="page-item"><a class="page-link" href="~/Shopping/SearchItemByCustomer/?pageNo=-1">Previous</a></li>
+
+        <li class="page-item"><a class="page-link disabled" href="~/Shopping/SearchItemByCustomer/?pageNo=1">Next</a></li>
     </ul>
 </nav>

@@ -14,29 +14,33 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        @Html.ActionLink("ShopHere", "Index", "Shopping", new { area = ""}, new { @class = "navbar-brand" })
+        @Html.ActionLink("ShopHere", "ViewAllItems", "Admin", new { area = ""}, new { @class = "navbar-brand" })
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
 
-                @Html.ActionLink("Admin", "Index", "Home",new { }, htmlAttributes: new { id = "Home", @class = "nav-link " })
+                @Html.ActionLink("Customer View", "Index", "Shopping",new { }, htmlAttributes: new { id = "Home", @class = "nav-link " })
             </li>
 
             <li class="nav-item active">
 
-                @Html.ActionLink("About", "About", "Home",new { }, htmlAttributes: new { id = "About", @class = "nav-link " })
+                @Html.ActionLink("All Items", "ViewAllItems", "Admin",new { }, htmlAttributes: new { id = "About", @class = "nav-link " })
             </li>
 
             <li class="nav-item active">
 
-                @Html.ActionLink("Add New Item", "AddItemInView", "Admin",new { }, htmlAttributes: new { id = "AddItem", @class = "nav-link " })
+                @Html.ActionLink("Add Item", "AddItemInView", "Admin",new { }, htmlAttributes: new { id = "AddItem", @class = "nav-link " })
+            </li>
+            <li class="nav-item active">
+
+                @Html.ActionLink("Orders", "ViewAllOrders", "Order",new { }, htmlAttributes: new { id = "AddItem", @class = "nav-link " })
             </li>
 
             
 
         </ul>
-        <form action="/Admin/SearchItemByCustomerAdmin" method="post" class="form-inline my-2 my-lg-0 ">
+        <form action="/Admin/SearchItemByCustomerAdminIndex" method="post" class="form-inline my-2 my-lg-0 ">
 
             <input class="form-control mr-sm-2" width="78" type="search" name="Search" placeholder="Search Item">
             <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>

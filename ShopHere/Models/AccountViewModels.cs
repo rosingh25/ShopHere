@@ -79,6 +79,9 @@ namespace ShopHere.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [Required]
+        [StringLength(200,ErrorMessage ="Address Maximum Length 200 characters")]
+        public string Address { get; set; }
     }
 
     public class ResetPasswordViewModel

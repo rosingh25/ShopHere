@@ -12,6 +12,7 @@ namespace ShopHere.Controllers
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private const byte pageSize = 4;
 
 
         public AdminController()
@@ -28,15 +29,117 @@ namespace ShopHere.Controllers
          *  -------Admin Actions--------
          *
          */
-        public ActionResult SearchItemByCustomerAdmin(string search)
-        {
-            /* IEnumerable<Item> SearchedItems = (from item in _context.Items
-                                               where item.ItemName.Contains(search)
-                                               select item).ToList();
-            */
-            IEnumerable<Item> SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search)).ToList();
 
-            return View("ViewAllItems", SearchedItems);
+        //To View All Items
+        public ActionResult ViewAllItems(int? pageNo)
+        {
+            TempData.Remove("search");
+
+            int pageNumber;
+            if (TempData["PageNumber"] == null)
+            {
+                pageNumber = 1;
+                TempData["PageNumber"] = 1;
+            }
+            else
+            {
+                if (pageNo == 1)
+                {
+                    pageNumber = Convert.ToInt32(TempData["PageNumber"]) + 1;
+                    TempData["PageNumber"] = pageNumber;
+                }
+                else if (pageNo == -1)
+                {
+                    pageNumber = Convert.ToInt32(TempData["PageNumber"]) - 1;
+                    TempData["PageNumber"] = pageNumber;
+                }
+                else
+                {
+                    pageNumber = 1;
+                    TempData["PageNumber"] = pageNumber;
+                }
+            }
+
+            if (pageNumber < 1)
+            {
+                pageNumber = 1;
+                TempData["PageNumber"] = 1;
+            }
+            pageNumber = (pageNumber - 1) * pageSize;
+
+            IEnumerable<Item> AllItems = _context.Items.OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+
+            if (AllItems.Any() == false)
+            {
+
+                return View("ProductSearchEnded");
+            }
+            TempData.Keep();
+            return View(AllItems);
+
+        }
+        public ActionResult SearchItemByCustomerAdminIndex(string search)
+        {
+            if (search == "")
+            {
+                return RedirectToAction("ViewAllItems");
+            }
+            TempData.Remove("search");
+            return RedirectToAction("SearchItemByCustomerAdmin", new { Search = search });
+        }
+
+        public ActionResult SearchItemByCustomerAdmin(string search, int? pageNo)
+        {
+
+            if (TempData["search"] != null)
+            {
+                search = TempData["Search"].ToString();
+            }
+
+            int pageNumber;
+            if (TempData["PageNumberSearch"] == null)
+            {
+                 pageNumber = 1;
+                TempData["PageNumberSearch"] = 1;
+            }
+            else
+            {
+                if (pageNo == 1)
+                {
+                    pageNumber = Convert.ToInt32(TempData["PageNumberSearch"]) + 1;
+                    TempData["PageNumberSearch"] = pageNumber;
+                }
+                else if (pageNo == -1)
+                {
+                    pageNumber = Convert.ToInt32(TempData["PageNumberSearch"]) - 1;
+                    TempData["PageNumberSearch"] = pageNumber;
+                }
+                else
+                {
+                    pageNumber = 1;
+                    TempData["PageNumberSearch"] = pageNumber;
+                }
+            }
+
+            if (pageNumber < 1)
+            {
+                pageNumber = 1;
+                TempData["PageNumberSearch"] = 1;
+            }
+            pageNumber = (pageNumber - 1) * pageSize;
+
+
+            IEnumerable<Item> SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search)).OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+            if (SearchedItems.Any() == false)
+            {
+
+                return View("ProductSearchEnded");
+            }
+            TempData["search"] = search;
+            TempData.Keep();
+        
+            
+            return View(SearchedItems);
 
         }
 
@@ -51,12 +154,7 @@ namespace ShopHere.Controllers
             return View(addItemModel);
         }
 
-        //To View All Items
-        public ActionResult ViewAllItems()
-        {
-            IEnumerable<Item> AllItems = _context.Items.ToList();
-            return View(AllItems);
-        }
+       
 
         //To Add New Item
         public ActionResult AddItemToDb(AddItemViewModel itemViewModel)
@@ -85,7 +183,7 @@ namespace ShopHere.Controllers
             
             if (addItemModel.Item == null)
             {
-                return View("InvalidIdView");
+                return View("ProductSearchEnded");
             }
             return View(addItemModel);
         }
@@ -110,7 +208,7 @@ namespace ShopHere.Controllers
             Item removing = _context.Items.SingleOrDefault(m => m.Id == id);
             if (removing == null)
             {
-                return View("InvalidIdView");
+                return View("ProductSearchEnded");
             }
             _context.Items.Remove(removing);
             _context.SaveChanges();

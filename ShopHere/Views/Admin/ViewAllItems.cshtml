@@ -5,23 +5,45 @@
 
 <h2>View All Items Here</h2>
 
-@foreach(var item in Model)
-{
-    <div style="border:ridge 2px black">
-        <h3>Item Name: @item.ItemName</h3>
-        <h3>Item Description: @item.ItemDescription</h3>
-        <h3>Item Price: @item.Price</h3>
-        @if (item.Quantity > 0)
-        {
-            <h3>Available Quantity : @item.Quantity</h3>
-        }
-        else
-        {
-            <h3>Item Not Available Currently</h3>
-        }
-    <button  class="btn btn-success" >@Html.ActionLink("Edit Item", "EditItemInView", "Admin", new { id = item.Id }, null) </button>
-        <button class=" btn btn-danger">@Html.ActionLink("Delete Item", "DeleteItemFromDb","Admin",new {id = item.Id },null)</button>
-    </div>
-    <br />
-    
-}
+<div class="row row-cols-1 row-cols-md-4">
+
+    @foreach (var item in Model)
+    {
+        <div class="col mb-4">
+
+            <div class="card">
+                <img src="~/Content/Images/ShoppingBag.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@item.ItemName</h5>
+                    <h6 class="card-text">Price : ₹ @item.Price</h6>
+                    <p class="card-text">@item.ItemDescription</p>
+
+
+
+                    <button class="btn btn-light btn-outline-dark">@Html.ActionLink("Edit Item", "EditItemInView", "Admin", new { id = item.Id }, null) </button>
+                    <button class=" btn btn-dark">@Html.ActionLink("Delete Item", "DeleteItemFromDb", "Admin", new { id = item.Id }, null)</button>
+                    @if (item.Quantity > 0)
+                    {<br />
+                        <p class="card-text float-right"><small class="text-muted"> Available Quantity : @item.Quantity </small></p>
+                    }
+                    else
+                    {
+                        <br />
+                        <p class="card-text float-right "><small class=" text-danger"> Item Out of Stock </small></p>
+                    }
+                </div>
+            </div>
+        </div>
+        <br />
+
+     }
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center ">
+
+        <li class="page-item"><a class="page-link" href="~/Admin/ViewAllItems/?pageNo=-1">Previous</a></li>
+
+        <li class="page-item"><a class="page-link" href="~/Admin/ViewAllItems/?pageNo=1">Next</a></li>
+    </ul>
+</nav>

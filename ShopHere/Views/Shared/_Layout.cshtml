@@ -20,23 +20,11 @@
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
 
-                    @Html.ActionLink("Homes", "Index", "Home", new { }, htmlAttributes: new { id = "Home", @class = "nav-link " })
+                    @Html.ActionLink("View All Products", "Index", "Shopping", new { }, htmlAttributes: new { id = "All", @class = "nav-link " })
                 </li>
-
-                <li class="nav-item active">
-
-                    @Html.ActionLink("About", "About", "Home", new { }, htmlAttributes: new { id = "About", @class = "nav-link " })
-                </li>
-
-                <li class="nav-item active">
-
-                    @Html.ActionLink("Contact", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
-                </li>
-
-
 
             </ul>
-            <form action="/Shopping/SearchItemByCustomer" method="post" class="form-inline my-2 my-lg-0 ">
+            <form action="/Shopping/SearchItemByCustomerIndex" method="post" class="form-inline my-2 my-lg-0 ">
 
                 <input class="form-control mr-sm-2" width="78" type="search" name="Search" placeholder="Search Item">
                 <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
@@ -60,39 +48,39 @@
             <ul class="navbar-nav mr-auto mt-2  mt-lg-0 ">
                 <li class="nav-item active mx-xl-5 btn-link ">
 
-                    @Html.ActionLink("Electronics", "Index", "Home", new { }, htmlAttributes: new { id = "Home", @class = "nav-link " })
+                    @Html.ActionLink("Electronics", "CategoryFilter", "Shopping", new { category= "Electronics" }, htmlAttributes: new { id = "Home", @class = "nav-link " })
                 </li>
 
                 <li class="nav-item active mx-5 btn-link">
 
-                    @Html.ActionLink("Clothes", "About", "Home", new { }, htmlAttributes: new { id = "About", @class = "nav-link " })
+                    @Html.ActionLink("Clothes", "CategoryFilter", "Shopping", new { category = "Clothes" }, htmlAttributes: new { id = "About", @class = "nav-link " })
                 </li>
 
                 <li class="nav-item active mx-5 btn-link">
 
-                    @Html.ActionLink("Kids", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                    @Html.ActionLink("Kids", "CategoryFilter", "Shopping", new { category = "Kids" }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
                 </li>
 
                 <li class="nav-item active mx-5 btn-link">
 
-                    @Html.ActionLink("HomeAndFurniture", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                    @Html.ActionLink("HomeAndFurniture", "CategoryFilter", "Shopping", new { category = "HomeAndFurniture" }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
                 </li>
                 <li class="nav-item active mx-5 btn-link">
 
-                    @Html.ActionLink("Sports", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                    @Html.ActionLink("Sports", "CategoryFilter", "Shopping", new { category = "Sports" }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
                 </li>
                 <li class="nav-item active mx-5 btn-link">
 
-                    @Html.ActionLink("Books", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                    @Html.ActionLink("Books", "CategoryFilter", "Shopping", new { category = "Books" }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
                 </li>
                 <li class="nav-item active  mx-5 btn-link">
 
-                    @Html.ActionLink("Other", "Contact", "Home", new { }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
+                    @Html.ActionLink("Other", "CategoryFilter", "Shopping", new { category = "Other" }, htmlAttributes: new { id = "Contact", @class = "nav-link " })
                 </li>
 
             </ul>
 <div>
-    <button class="btn-dark"> Cart</button>
+    <button class="btn-dark"> @Html.ActionLink("My Orders","Index","Order")</button>
 </div>           
 
         </div>
