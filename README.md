@@ -6,13 +6,13 @@ Upcoming Changes :
 
 Changes : 
 22-11-2020
-  1.Added Order Model
-  2.Added Address property in User- 3.IdentityModels
-  4.Updated Views for Addition Deletion Editing or item
-  5.configured routing of all missing links in views and controllers
-  6.Added Order Controller and added order viewing actions to it
-  7.Added search by orderit in view orders
-  8.Updated search item action.
+  1. Added Order Model
+  2. Added Address property in User- 3.IdentityModels
+  4. Updated Views for Addition Deletion Editing or item
+  5. configured routing of all missing links in views and controllers
+  6. Added Order Controller and added order viewing actions to it
+  7. Added search by orderit in view orders
+  8. Updated search item action.
   
 21-11-2020
   1. Added Categories to Items
