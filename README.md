@@ -42,7 +42,7 @@ Functionality:
   4. Admin can add, edit or delete items added by him as well as can see orders by customers of items added by him.
   5. customer can buy items or view his orders.
   6. Functionality of searching and filter items is provided in application also.
-  7. Pagination is also added to have a better interaction with UI (Max 4 items per page).
+  7. Pagination is also added to have a better interaction with UI (Max 4 items per page). <br />
 Note: There can be >1 admins registered and each admin will have control on his own products and can't modify any other Admin's added items.<br/>
 
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
