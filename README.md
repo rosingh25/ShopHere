@@ -1,6 +1,6 @@
 # ShopHere
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
-Any Issues found : please mail to chambiyalrohit344@gmail.com
+  Any Issues found : please mail to chambiyalrohit344@gmail.com
 
 Upcoming Changes :
   No Upcoming Changes right now.
