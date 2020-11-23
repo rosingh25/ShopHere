@@ -1,11 +1,16 @@
 # ShopHere
-Entity Framework Version : v6.2.0
-Bootstrap Version : v4.5.3
+Entity Framework Version : v6.2.0     <br/>
+Bootstrap Version : v4.5.3            <br/>
+Note : if enable-migrations does not work.
+  1. right click on project name -> Manage NuGet packages
+  2. Search EntityFramework and install v6.2.0 in the project
 
-Steps : To Download And Load Project:
+
+
+Steps to to download and load project in visual studio:
   1. Delete Migrations folder from project after downloading project.
   2. Go to Tools -> NuGet Package Manager -> Package Manager Console.
-  3. If warning message at top of package manager console : similar to some packages are missing : restore
+  3. If warning message at top of package manager console : similar to - some packages are missing : restore
   4. if(above warning) click on restore.
   5. In Package Manager Console -> Run the below No. 4 & 5 commands.
   
@@ -20,6 +25,13 @@ Steps : To Download And Load Project:
   
   12. Now run the project using control + F5.
   13. If it shows risk to enter website -> go to Advanced button -> Visit Anyways.
+  <br/>
+  <br/>
+  If Still Errors in packages:
+  <br/>
+  Tools > NuGet Package Manager > Package manager setting >. Under General, select Allow NuGet to download missing packages.
+  <br/>
+  In Solution Explorer, right click the solution and select Restore NuGet Packages.
   
 Functionality:
   For first time user to interact with website UI following are the instructions:
