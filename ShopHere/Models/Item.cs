@@ -37,6 +37,8 @@ namespace ShopHere.Models
         [Required(ErrorMessage = "Please Select Category")]
         public int? CategoryId { get; set; }
 
+        public string AdminName { get; set; }
+
 
 
     }

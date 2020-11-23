@@ -67,7 +67,7 @@ namespace ShopHere.Controllers
             }
             pageNumber = (pageNumber - 1) * pageSize;
 
-            IEnumerable<Item> AllItems = _context.Items.OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+            IEnumerable<Item> AllItems = _context.Items.Where(c =>c.AdminName == User.Identity.Name).OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
 
             if (AllItems.Any() == false)
             {
@@ -128,8 +128,8 @@ namespace ShopHere.Controllers
             }
             pageNumber = (pageNumber - 1) * pageSize;
 
-
-            IEnumerable<Item> SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search)).OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+            
+            IEnumerable<Item> SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search) && c.AdminName == User.Identity.Name).OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
             if (SearchedItems.Any() == false)
             {
 

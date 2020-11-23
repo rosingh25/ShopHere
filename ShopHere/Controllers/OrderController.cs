@@ -30,10 +30,10 @@ namespace ShopHere.Controllers
             IEnumerable<Order> AllOrders;
             if (id != null)
             {
-                AllOrders = _context.Orders.Include("Item").Where(o => o.OrderId == id).OrderByDescending(o => o.OrderId).ToList();
+                AllOrders = _context.Orders.Include("Item").Where(o => o.OrderId == id && o.Item.AdminName == User.Identity.Name).OrderByDescending(o => o.OrderId).ToList();
                 return View(AllOrders);
             }
-            AllOrders = _context.Orders.Include("Item").OrderByDescending(o => o.OrderId).ToList();
+            AllOrders = _context.Orders.Include("Item").Where(o => o.Item.AdminName == User.Identity.Name).OrderByDescending(o => o.OrderId).ToList();
             return View(AllOrders);
             
         }

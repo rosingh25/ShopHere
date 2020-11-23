@@ -37,6 +37,7 @@
         @Html.DropDownListFor(m => m.Item.CategoryId, new SelectList(Model.Categories ,"Id", "CategoryName"),"Select Category", htmlAttributes: new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Item.CategoryId)    
     </div>
+    @Html.HiddenFor(m => m.Item.AdminName, new {@Value = User.Identity.Name })
     <br />
     <button type="submit" name="Submit" class="btn btn-primary mb-2 ">Create Item</button>
 

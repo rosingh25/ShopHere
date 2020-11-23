@@ -230,6 +230,10 @@
     <Compile Include="Migrations\202011221642517_AddressInApplicationUser.Designer.cs">
       <DependentUpon>202011221642517_AddressInApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011230518209_AddAdminNameInItem.cs" />
+    <Compile Include="Migrations\202011230518209_AddAdminNameInItem.Designer.cs">
+      <DependentUpon>202011230518209_AddAdminNameInItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -421,6 +425,7 @@
     <Content Include="Views\Shared\ProductSearchEnded.cshtml" />
     <Content Include="Views\Shopping\ItemNotAvailable.cshtml" />
     <Content Include="Views\Order\ViewAllOrders.cshtml" />
+    <Content Include="Views\Account\RegisterAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -469,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011221642517_AddressInApplicationUser.resx">
       <DependentUpon>202011221642517_AddressInApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011230518209_AddAdminNameInItem.resx">
+      <DependentUpon>202011230518209_AddAdminNameInItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
