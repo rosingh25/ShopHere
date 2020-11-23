@@ -8,6 +8,7 @@ using ShopHere.ViewModels;
 
 namespace ShopHere.Controllers
 {
+    [HandleError]
     [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {

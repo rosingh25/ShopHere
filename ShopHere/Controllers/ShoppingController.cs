@@ -9,6 +9,7 @@ using ShopHere.ViewModels;
 
 namespace ShopHere.Controllers
 {
+    [HandleError]
     public class ShoppingController : Controller
     {
         public const byte pageSize = 4;

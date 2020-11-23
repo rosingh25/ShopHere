@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ShopHere.Controllers
 {
+    [HandleError]
     public class OrderController : Controller
     {
         private readonly ApplicationDbContext _context;
