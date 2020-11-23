@@ -5,6 +5,19 @@
 
 
 <h3>Search Results</h3>
+<form action="/Shopping/SearchItemByCustomerIndex" method="post" class="form-inline my-2 my-lg-0 justify-content-end ">
+
+    <select class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" name="filter">
+        <option value="1">Price-high to low</option>
+        <option value="2">Price-low to high</option>
+    </select>
+    @{ 
+        string val = TempData["search"].ToString();
+    }
+    <input type="hidden" name="search" value="@val" />
+    <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Filter</button>
+
+</form>
 
 <div class="row row-cols-1 row-cols-md-4">
 

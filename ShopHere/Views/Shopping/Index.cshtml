@@ -7,8 +7,16 @@
 <br />
 
 
+<form action="/Shopping/Index" method="post" class="form-inline my-2 my-lg-0 justify-content-end ">
 
+    <select name="filter">
+        <option value="1">Price-high to low</option>
+        <option value="2">Price-low to high</option>
+    </select>
+    <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Filter</button>
 
+</form>
+<br />
 
 
 <div class="row row-cols-1 row-cols-md-4">
@@ -57,11 +65,11 @@
         </div>
 
     }
-    
+
 </div>
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center ">
-        
+
         <li class="page-item"><a class="page-link" href="~/Shopping/Index/?pageNo=-1">Previous</a></li>
 
         <li class="page-item"><a class="page-link" href="~/Shopping/Index/?pageNo=1">Next</a></li>

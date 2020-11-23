@@ -22,9 +22,13 @@ namespace ShopHere.Controllers
         }
         // GET: Shopping
         [AllowAnonymous]
-        public ActionResult Index(int? pageNo)
+        public ActionResult Index(int? pageNo,string filter)
         {
-            
+            if (filter ==null &&TempData["filter"] != null)
+            {
+                filter = TempData["filter"].ToString();
+            }
+            TempData.Remove("pricefilter");
             TempData.Remove("search");
             TempData.Remove("category");
             int pageNumber;
@@ -59,8 +63,26 @@ namespace ShopHere.Controllers
                 TempData["PageNumber"] = 1;
             }
             pageNumber = (pageNumber - 1) * pageSize;
-
-            IEnumerable<Item> AllItems = _context.Items.OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+            IEnumerable<Item> AllItems;
+            
+            if (filter != null)
+            {
+                if (filter == "1")
+                {
+                    TempData["filter"] = "1";
+                    AllItems = _context.Items.OrderByDescending(item => item.Price).Skip(pageNumber).Take(pageSize).ToList();
+                }
+                else
+                {
+                    TempData["filter"] = "2";
+                    AllItems = _context.Items.OrderBy(item => item.Price).Skip(pageNumber).Take(pageSize).ToList();
+                }
+            }
+            else
+            {
+                 AllItems = _context.Items.OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+            }
+            
             
              if(AllItems.Any() == false)
             {
@@ -81,7 +103,9 @@ namespace ShopHere.Controllers
          */
         [AllowAnonymous]
 
-        public ActionResult SearchItemByCustomerIndex(string search)
+
+
+        public ActionResult SearchItemByCustomerIndex(string search, string Filter)
         {
             if(search == "")
             {
@@ -89,22 +113,23 @@ namespace ShopHere.Controllers
 
             }
             TempData.Remove("search");
-            return RedirectToAction("SearchItemByCustomer",new { Search = search });
+            return RedirectToAction("SearchItemByCustomer",new { search = search, filter = Filter });
         }
         [AllowAnonymous]
-        public ActionResult SearchItemByCustomer(string search,int? pageNo)
+        public ActionResult SearchItemByCustomer(string search,int? pageNo,string filter)
         {
-            TempData.Remove("category");
-            if (search == null)
+            if (filter == null && TempData["pricefilter"] != null)
             {
-                TempData.Remove("search");
+                filter = TempData["pricefilter"].ToString();
             }
-            
-            if(TempData["search"]!= null)
+            TempData.Remove("filter");
+
+            TempData.Remove("category");
+            if (TempData["search"] != null)
             {
                 search = TempData["Search"].ToString();
             }
-            
+
             int pageNumber;
             if (TempData["PageNumberSearch"] == null)
             {
@@ -137,9 +162,24 @@ namespace ShopHere.Controllers
                 TempData["PageNumberSearch"] = 1;
             }
             pageNumber = (pageNumber - 1) * pageSize;
-
-
-            IEnumerable<Item> SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search)).OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+            IEnumerable<Item> SearchedItems;
+            if (filter != null)
+            {
+                if (filter == "1")
+                {
+                    TempData["pricefilter"] = "1";
+                    SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search)).OrderByDescending(item => item.Price).Skip(pageNumber).Take(pageSize).ToList();
+                }
+                else
+                {
+                    TempData["pricefilter"] = "2";
+                    SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search)).OrderBy(item => item.Price).Skip(pageNumber).Take(pageSize).ToList();
+                }
+            }
+            else
+            {
+                SearchedItems = _context.Items.Where(c => c.ItemName.Contains(search)).OrderBy(item => item.Id).Skip(pageNumber).Take(pageSize).ToList();
+            }
             if (SearchedItems.Any() == false)
             {
 
@@ -152,6 +192,7 @@ namespace ShopHere.Controllers
         [AllowAnonymous]
         public ActionResult CategoryFilter(string category,int? pageNo)
         {
+            TempData.Remove("filter");
             TempData.Remove("search");
             if(pageNo == null)
             {
