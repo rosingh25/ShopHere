@@ -1,4 +1,37 @@
 # ShopHere
+Entity Framework Version : v6.2.0
+Bootstrap Version : v4.5.3
+
+Steps : To Download And Load Project:
+  1. Delete Migrations folder from project after downloading project.
+  2. Go to Tools -> NuGet Package Manager -> Package Manager Console.
+  3. If warning message at top of package manager console : similar to some packages are missing : restore
+  4. if(above warning) click on restore.
+  5. In Package Manager Console -> Run the below No. 4 & 5 commands.
+  
+  6. enable-migrations.
+  7. add-migration FirstMigration.
+  
+  8. at end of Up() method in 0..._ FirstMigration of Migrations folder, paste -> Pending Migration File.txt content of PendingMigration folder and save the files.   
+  9. Delete App_Data folder from project.
+  10. in Package Manager Console -> run below No. 11 command.
+  
+  11. update-database.
+  
+  12. Now run the project using control + F5.
+  13. If it shows risk to enter website -> go to Advanced button -> Visit Anyways.
+  
+Functionality:
+  For first time user to interact with website UI following are the instructions:
+  1. Register button at navbar to register.
+  2. At end of register form option to register as Admin.
+  3. Login button to register at navbar to login (common login form for both admin and customer).
+  4. Admin can add, edit or delete items added by him as well as can see orders by customers of items added by him.
+  5. customer can buy items or view his orders.
+  6. Functionality of searching and filter items is provided in application also.
+  7. Pagination is also added to have a better interaction with UI (Max 4 items per page).
+Note: There can be >1 admins registered and each admin will have control on his own products and can't modify any other Admin's added items.
+
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
   1. Any Issues found : please mail to chambiyalrohit344@gmail.com.
 
