@@ -1,10 +1,20 @@
 # ShopHere
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
+  1. Any Issues found : please mail to chambiyalrohit344@gmail.com.
 
 Upcoming Changes :
   No Upcoming Changes right now.
 
 Changes : 
+23-11-2020
+  1. Added Admin Login
+  2. Restricted Admin Access to his own products
+  3. Custom Error Added
+  4. Allow Anonymous Customer Search
+  5. Resolved Edit Item in view admin name missing issue
+  6. Resolved Search for customer only 1 page issue.
+  7. Extended filter capability to search.
+  
 22-11-2020
   1. Added Order Model
   2. Added Address property in User- 3.IdentityModels
@@ -13,8 +23,7 @@ Changes :
   6. Added Order Controller and added order viewing actions to it
   7. Added search by orderit in view orders
   8. Updated search item action.
-  9. Added Admin Login
-  10. Restricted Admin Access to his own products
+
 
   
 21-11-2020
