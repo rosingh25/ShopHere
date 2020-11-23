@@ -24,15 +24,15 @@ Steps to to download and load project in visual studio:
   11. update-database.
   
   12. Now run the project using control + F5.
-  13. If it shows risk to enter website -> go to Advanced button -> Visit Anyways.
+  13. If it shows risk to enter website -> go to Advanced button -> Visit Anyways.    <br/>
+  
   <br/>
-  <br/>
-  If Still Errors in packages:
-  <br/>
-  Tools > NuGet Package Manager > Package manager setting >. Under General, select Allow NuGet to download missing packages.
-  <br/>
+  If Still Errors in packages:      <br/>
+  
+  Tools > NuGet Package Manager > Package manager setting >. Under General, select Allow NuGet to download missing packages.        <br/>
+  
   In Solution Explorer, right click the solution and select Restore NuGet Packages.
-  <br/>
+ ----------------------
 Functionality:
   For first time user to interact with website UI following are the instructions:
   1. Register button at navbar to register.
@@ -42,7 +42,7 @@ Functionality:
   5. customer can buy items or view his orders.
   6. Functionality of searching and filter items is provided in application also.
   7. Pagination is also added to have a better interaction with UI (Max 4 items per page).
-Note: There can be >1 admins registered and each admin will have control on his own products and can't modify any other Admin's added items.
+Note: There can be >1 admins registered and each admin will have control on his own products and can't modify any other Admin's added items.<br/>
 
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
   1. Any Issues found : please mail to chambiyalrohit344@gmail.com.
