@@ -13,6 +13,9 @@ Changes :
   6. Added Order Controller and added order viewing actions to it
   7. Added search by orderit in view orders
   8. Updated search item action.
+  9. Added Admin Login
+  10. Restricted Admin Access to his own products
+
   
 21-11-2020
   1. Added Categories to Items
