@@ -17,7 +17,7 @@ Steps to to download and load project in visual studio:
   6. enable-migrations.
   7. add-migration FirstMigration.
   
-  8. at end of Up() method in 2020..._ FirstMigration of Migrations folder, paste -> Pending Migration File.txt content of PendingMigration folder and save the files.   
+  8. At the end of inside Up() method in 2020..._ FirstMigration of Migrations folder, paste -> Pending Migration File.txt content of PendingMigration folder and save the files.   
   9. Delete App_Data folder from project.
   10. in Package Manager Console -> run below No. 11 command.
   
