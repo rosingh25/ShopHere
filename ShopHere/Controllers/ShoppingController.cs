@@ -79,6 +79,8 @@ namespace ShopHere.Controllers
          *  -------Customer Actions--------
          *
          */
+        [AllowAnonymous]
+
         public ActionResult SearchItemByCustomerIndex(string search)
         {
             if(search == "")
