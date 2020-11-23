@@ -147,6 +147,7 @@ namespace ShopHere.Controllers
             TempData.Keep();
             return View(SearchedItems);
         }
+        [AllowAnonymous]
         public ActionResult CategoryFilter(string category,int? pageNo)
         {
             TempData.Remove("search");
