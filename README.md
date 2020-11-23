@@ -32,7 +32,7 @@ Steps to to download and load project in visual studio:
   Tools > NuGet Package Manager > Package manager setting >. Under General, select Allow NuGet to download missing packages.
   <br/>
   In Solution Explorer, right click the solution and select Restore NuGet Packages.
-  
+  <br/>
 Functionality:
   For first time user to interact with website UI following are the instructions:
   1. Register button at navbar to register.
