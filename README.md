@@ -22,7 +22,7 @@ Steps to to download and load project in visual studio:
   
   10. in Package Manager Console -> run below No. 11 command.
   
-  11. update-database.
+  11. update-database 
   
   12. Now run the project using control + F5.
   13. If it shows risk to enter website -> go to Advanced button -> Visit Anyways.    <br/>
