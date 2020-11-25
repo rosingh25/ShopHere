@@ -1,6 +1,7 @@
 # ShopHere
 Entity Framework Version : v6.2.0     <br/>
 Bootstrap Version : v4.5.3            <br/>
+Note : Resolved issue of Null Reference exception in Register page for some Visual Studio Versions. 
 Note : if enable-migrations does not work.
   1. right click on project name -> Manage NuGet packages
   2. Search EntityFramework and install v6.2.0 in the project
@@ -48,6 +49,7 @@ Note: There can be >1 admins registered and each admin will have control on his 
 
 ShopHere Web Application to allow Customers to shop + Manage data as Admin
   1. Any Issues found : please mail to chambiyalrohit344@gmail.com.
+
 
 Upcoming Changes :
   No Upcoming Changes right now.
