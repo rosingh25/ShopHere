@@ -12,7 +12,7 @@ Steps to to download and load project in visual studio:
   2. Go to Tools -> NuGet Package Manager -> Package Manager Console.
   3. If warning message at top of package manager console : similar to - some packages are missing : restore
   4. if(above warning) click on restore.
-  5. In Package Manager Console -> Run the below No. 4 & 5 commands.
+  5. In Package Manager Console -> Run the below No. 6 & 7 commands.
   
   6. enable-migrations.
   7. add-migration FirstMigration.
