@@ -59,7 +59,9 @@ namespace ShopHere.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            LoginViewModel loginViewModel = new LoginViewModel();
+            
+            return View(loginViewModel);
         }
 
         //
@@ -140,13 +142,15 @@ namespace ShopHere.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            RegisterViewModel registerViewModel = new RegisterViewModel();
+            return View(registerViewModel);
         }
         [AllowAnonymous]
 
         public ActionResult RegisterAdmin()
         {
-            return View();
+            RegisterViewModel registerViewModel = new RegisterViewModel();
+            return View(registerViewModel);
         }
 
         //
@@ -228,7 +232,9 @@ namespace ShopHere.Controllers
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
-            return View();
+            ForgotPasswordViewModel forgotPasswordViewModel = new ForgotPasswordViewModel();
+        
+            return View(forgotPasswordViewModel);
         }
 
         //
