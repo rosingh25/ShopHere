@@ -5,8 +5,7 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopHere", "ShopHere\ShopHere.csproj", "{87F85FF2-2E20-4FEF-9524-378127F3F7C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vidly", "..\Vidly\Vidly\Vidly.csproj", "{2772FB9C-65D4-419E-AC9F-A47E6A659292}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
